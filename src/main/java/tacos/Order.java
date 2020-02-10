@@ -3,12 +3,18 @@ package tacos;
 import lombok.Data;
 import org.hibernate.validator.constraints.CreditCardNumber;
 
+import javax.persistence.*;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
+import java.util.Date;
 
 @Data
 public class Order {
+
+    private Long id;
+
+    private Date createdAt;
 
     @NotBlank(message = "Name is required")
     private String name;
@@ -29,4 +35,6 @@ public class Order {
     private String ccCVV;
 
 
+    public void addDesign(Taco saved) {
+    }
 }
